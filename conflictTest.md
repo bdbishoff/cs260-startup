@@ -1,1 +1,1 @@
-Yes mam ski
+Yes mam bruh
