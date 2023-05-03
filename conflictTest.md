@@ -1,1 +1,1 @@
-Yes sir ski
+Yes mam ski
