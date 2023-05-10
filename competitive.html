@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liar-GPT</title>
+    <link rel="icon" href="favicon.ico" />
+  </head>
+  <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+      <h1>Liar-GPT<sup>&reg;</sup></h1>
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="freePlay.html">Free Play</a></li>
+          <li><a href="competitive.html">Competitive</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li>User that is logged in</li>
+        </menu>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+      <h1>Welcome</h1>
+      <p>Competitive Mode</p>
+      <form method="get" action="">
+        <ul>
+            <button type="submit">New Question</button>
+        </ul>
+      </form>
+
+      <h2 for="streak">Currrent Streak: 5</h2>
+      <h2 for="highScore">Your highest score: 7</h2>
+
+      <fieldset>
+        <legend>Select the lie</legend>
+        <label for="radio1">Truth</label>
+        <input type="radio" id="radio1" name="varRadio" value="radio1" checked />
+        <label for="radio2">Truth</label>
+        <input type="radio" id="radio2" name="varRadio" value="radio2" />
+        <label for="radio3">Lie</label>
+        <input type="radio" id="radio3" name="varRadio" value="radio3" />
+      </fieldset>
+
+      <form method="action" action="">
+        <button type="button">submit</button>
+      </form>
+
+
+    </main>
+
+    <footer>
+      <hr />
+      <span class="text-reset">Author Name(s)</span>
+      <br />
+      <a href="https://github.com/bdbishoff/cs260-startup">GitHub</a>
+    </footer>
+  </body>
+</html>
