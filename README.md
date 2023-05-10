@@ -36,3 +36,17 @@ Here is a sequence diagram that shows how people would interact with the backend
 - **WebSocket** - As each user plays, their number of correct answers are broadcast to all other users on a leaderboard.
 - **React** - Application ported to use the React web framework.
 
+# Project Deliverables
+
+## HTML deliverable
+
+For this deliverable I added the application structure.
+
+- **HTML pages** - Five HTML pages that represent the ability to login, choose gamemode, and visit leaderboard.
+- **Links** - The login page links to gamemmode selection page. There are headers to every page on each page.
+- **Text** - There is text representations of each element that will be in the final project.
+- **Images** - I added a logo to the homepage.
+- **Login** - Input box and submit button for login.
+- **Database** - There are stored prompts in a database for the competitive gamemode.
+- **WebSocket** - The counting of correct responses is tallyed on a leaderboard in realtime.
+
