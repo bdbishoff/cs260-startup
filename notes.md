@@ -39,5 +39,14 @@ sudo service caddy restart
 ssh -i [key pair file] ubuntu@[yourdomainnamehere]
 ```
 
+# Working on Project
+
+### I. HTML
+```
+Command to deploy contents to webserver
+
+./deployFiles.sh -k ~/Desktop/cs260/awsWebserver/production.pem -h bishoff.click -s simon
+```
+
 
 ['Read Me' for this project](docs/README.md)
