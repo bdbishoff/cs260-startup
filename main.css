@@ -5,7 +5,20 @@ body {
   }
 
   header {
+    padding: 1em;
     flex: 0 80px;
+  }
+
+  ul {
+    display: grid;
+  }
+
+  #userID {
+    margin-left: auto;
+  }
+
+  #userID .nav-link {
+    color: black !important; 
   }
 
   main {
@@ -13,23 +26,21 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   footer {
+    padding: 1em;
     flex: 0 30px;
   }
 
-  menu {
-    flex: 1;
-    display: flex;
-    /*  overwrite Bootstrap so the menu does not wrap */
-    flex-direction: row !important;
-    list-style: none;
+  .btn-space {
+   display: flex;
+   justify-content: center;
   }
 
   footer a {
-    float: middle;
+    float: right;
   }
 
   @media (max-height: 600px) {
