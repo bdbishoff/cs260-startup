@@ -50,3 +50,14 @@ For this deliverable I added the application structure.
 - **Database** - There are stored prompts in a database for the competitive gamemode.
 - **WebSocket** - The counting of correct responses is tallyed on a leaderboard in realtime.
 
+## CSS deliverable
+
+For this deliverable I properly styled the application into its final appearance.
+
+- **Header, footer, and main content body**
+- **Navigation elements** - I made them all the same color and made the user ID off to the right. 
+- **Responsive to window resizing** - My app looks great on all window sizes and devices.
+- **Application elements** - Used good contrast and whitespace.
+- **Application text content** - Consistent fonts and colors.
+- **Application images** - placed logo on homepage and put emoji's on competitive page.
+
