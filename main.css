@@ -17,7 +17,11 @@ body {
     margin-left: auto;
   }
 
-  #userID .nav-link {
+  .nav-link {
+    color: #dc3545 !important;
+}
+
+#userID .nav-link {
     color: black !important; 
   }
 
@@ -39,8 +43,16 @@ body {
    justify-content: center;
   }
 
+  .btn-primary {
+    --bs-btn-bg: #c52938 !important;
+    --bs-btn-border-color: #a1101f !important;
+    --bs-btn-hover-bg: #ff5264 !important;
+    --bs-btn-hover-border-color: #e63042 !important;
+  }
+
   footer a {
     float: right;
+    color: #dc3545;
   }
 
   @media (max-height: 600px) {
