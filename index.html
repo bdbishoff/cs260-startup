@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liar-GPT</title>
     <link rel="icon" href="favicon.ico" />
-
+    
     <link rel="stylesheet" href="main.css" />
 
     <!-- Include bootstrap CSS framework -->
@@ -36,21 +36,20 @@
           <a class="nav-link" href="leaderboard.html">Leaderboard</a>
         </li>
         <li class="nav-item" id="userID">
-          <a class="nav-link">User ID</a>
+          <a class="nav-link" id="changeUser">User ID</a>
         </li>
       </ul>
       <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
     </header>
-
+    
     <main>
       <img src="logo.png" width="50">
       <h1>Welcome</h1>
       <p>Login to play</p>
-      <form method="get" action="choose.html">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+            <span class="input-group-text"  id="inputGroup-sizing-default">Name</span>
           </div>
           <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
@@ -61,9 +60,8 @@
           <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
         <div class="btn-space">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button class="btn btn-primary" onclick="login()">Submit</button>
         </div>
-      </form>
     </main>
 
     <footer>
@@ -72,5 +70,9 @@
       <a href="https://github.com/bdbishoff/cs260-startup">GitHub</a>
       <br />
     </footer>
+    <script src="login.js"></script>
+    <script>
+      document.getElementById("changeUser").innerHTML = localStorage.getItem("userName");
+    </script>
   </body>
 </html>

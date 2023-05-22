@@ -36,12 +36,15 @@
           <a class="nav-link" href="leaderboard.html">Leaderboard</a>
         </li>
         <li class="nav-item" id="userID">
-          <a class="nav-link">User ID</a>
+          <a class="nav-link" id="changeUser">User ID</a>
         </li>
       </ul>
       <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
     </header>
+    <script>
+      document.getElementById("changeUser").innerHTML = localStorage.getItem("userName");
+    </script>
 
     <table class="table">
       <thead>
