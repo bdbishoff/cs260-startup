@@ -18,11 +18,11 @@ ul {
   }
 
 .nav-link {
-    color: #dc3545 !important;
+    color: #dc3545;
 }
 
 #userID .nav-link {
-    color: black !important; 
+    color: black; 
   }
 
 main {
@@ -57,8 +57,8 @@ h1 {
 }
 
 .btn-secondary {
-    --bs-btn-bg: #575a5d !important;
-    --bs-btn-active-bg:#262628 !important;
+    --bs-btn-bg: #575a5d;
+    --bs-btn-active-bg:#262628;
 }
 
 .answer-submit {
@@ -66,10 +66,10 @@ h1 {
 }
 
 .btn-primary {
-    --bs-btn-bg: #c52938 !important;
-    --bs-btn-border-color: #a1101f !important;
-    --bs-btn-hover-bg: #ff5264 !important;
-    --bs-btn-hover-border-color: #e63042 !important;
+    --bs-btn-bg: #c52938;
+    --bs-btn-border-color: #a1101f;
+    --bs-btn-hover-bg: #ff5264;
+    --bs-btn-hover-border-color: #e63042;
   }
 
   footer {
@@ -83,8 +83,8 @@ h1 {
   }
 
   .wrong {
-    --bs-btn-bg: #c52938 !important;
-    --bs-btn-active-bg: #a1101f !important;
+    --bs-btn-bg: #c52938;
+    --bs-btn-active-bg: #a1101f;
   }
 
 @media (max-height: 600px) {

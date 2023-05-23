@@ -18,11 +18,11 @@ ul {
   }
 
 .nav-link {
-    color: #dc3545 !important;
+    color: #dc3545;
 }
 
 #userID .nav-link {
-    color: black !important; 
+    color: black; 
   }
 
 main {
