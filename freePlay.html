@@ -48,36 +48,34 @@
 
     <main>
       <h1>Free Play</h1>
-      <form method="get" action="choose.html">
+      <div class="prompt">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default">Enter a Topic</span>
           </div>
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" class="form-control prompt-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
-        <button type="submit" class="btn btn-primary">Generate</button>
-      </form>
+        <button class="btn btn-primary" onclick="getLies()">Generate</button>
+      </div>
 
       <div class="seperation"></div>
 
-      <form method="action" action=""></form>
+    <div id="before-gen-options" style="display: none;">
       <div class="options">
-        <legend>Select the lie</legend>
+        <legend id="correctAnswer">Select the lie</legend>
         <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-        <label class="btn btn-secondary" for="option1">The American Civil War was fought from 1861 to 1865.</label>
+        <label class="btn btn-secondary option1" for="option1">The American Civil War was fought from 1861 to 1865.</label>
         
         <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-        <label class="btn btn-secondary" for="option2">The Boston Tea Party occurred in 1773 and was a significant event leading up to the American Revolution.</label>
+        <label class="btn btn-secondary option2" for="option2">The Boston Tea Party occurred in 1773 and was a significant event leading up to the American Revolution.</label>
         
         <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-        <label class="btn btn-secondary" for="option3">The United States Constitution was signed in 1789 after the American Revolutionary War ended.</label>
+        <label class="btn btn-secondary option3" for="option3">The United States Constitution was signed in 1789 after the American Revolutionary War ended.</label>
       </div>
-      <div class="answer-submit">
-      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+      <div class="answer-submit" id="before-gen-submit" style="display: none;">
+        <button class="btn btn-primary" onclick="checkAnswer()">Submit</button>
       </div>
-      </form>
-
-
     </main>
 
     <footer>
@@ -86,5 +84,6 @@
       <a href="https://github.com/bdbishoff/cs260-startup">GitHub</a>
       <br />
     </footer>
+    <script src="freeplay.js"></script>
   </body>
 </html>

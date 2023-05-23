@@ -36,7 +36,7 @@ h1 {
     padding: .2em;
 }
 
-form {
+.prompt {
     display: flex;
     flex-direction: row;
     gap: 1em;
@@ -80,6 +80,11 @@ form {
   footer a {
     float: right;
     color: #dc3545;
+  }
+
+  .wrong {
+    --bs-btn-bg: #c52938 !important;
+    --bs-btn-active-bg: #a1101f !important;
   }
 
 @media (max-height: 600px) {
