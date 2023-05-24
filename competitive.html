@@ -53,11 +53,13 @@
       </div>
 
       <div class="seperation">
-        <button type="button" class="btn btn-light" id="btn-highScore">Highest Streak&#128293;: 0</button>
-        <button type="button" class="btn btn-light" id="btn-currScore">Current Streak&#128200;: 0</button>
+        <button type="button" class="btn btn-light" >Highest Streak&#128293;: <span id="btn-highStreak">0</span></button>
+        <button type="button" class="btn btn-light" >Current Streak&#128200;: <span id="btn-currStreak">0</span></button>
       </div>
       <script>
         document.getElementById("changeUser").innerHTML = localStorage.getItem("userName");
+        document.getElementById("btn-highStreak").innerHTML = localStorage.getItem("highStreak");
+        document.getElementById("btn-currStreak").innerHTML = localStorage.getItem("currStreak");
       </script>
 
     <div id="before-gen-options" style="visibility: hidden;">

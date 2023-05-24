@@ -8,6 +8,29 @@ function shuffleArray(array) {
     return shuffledArray;
     }
 
+function updateScores (correct) {
+  let currStreak = localStorage.getItem("currStreak");
+  let highStreak = localStorage.getItem("highStreak");
+
+  if (correct) {
+    currStreak++
+    localStorage.setItem("currStreak", currStreak);
+
+    if (highStreak < currStreak) {
+      highStreak = currStreak;
+      localStorage.setItem("highStreak", highStreak);
+    }
+
+    document.getElementById("btn-highStreak").innerHTML = localStorage.getItem("highStreak");
+    document.getElementById("btn-currStreak").innerHTML = localStorage.getItem("currStreak");
+  }
+  else {
+    currStreak = 0;
+    localStorage.setItem("currStreak", currStreak);
+    document.getElementById("btn-currStreak").innerHTML = localStorage.getItem("currStreak");
+  }
+}
+
 function getLies() {
     // Grab input prompt
     // const prompt = document.getElementsByClassName("prompt-input")[0].value;
@@ -97,40 +120,39 @@ function checkAnswer () {
         if (window.shuffled[0] == window.lie) {
             correctAnswer = document.getElementById("correctAnswer");
             correctAnswer.innerHTML = "You are right &#9989";
-            
+            updateScores(true);
         }
         else {
           correctAnswer = document.getElementById("correctAnswer");
           correctAnswer.innerHTML = "You are wrong &#10060;";
+          updateScores(false);
         }
-        
-        
-        document.getElementById("before-gen-submit").style.visibility="hidden";
     }
 
     else if (document.getElementById("option2").checked) {
         if (window.shuffled[1] == window.lie) {
           correctAnswer = document.getElementById("correctAnswer");
           correctAnswer.innerHTML = "You are right &#9989";
+          updateScores(true);
         }
         else {
           correctAnswer = document.getElementById("correctAnswer");
           correctAnswer.innerHTML = "You are wrong &#10060;";
           btn = document.getElementById("option2");
+          updateScores(false);
         }
-        
-        
-        document.getElementById("before-gen-submit").style.visibility="hidden";
     }
 
     else if (document.getElementById("option3").checked) {
         if (window.shuffled[2] == window.lie) {
           correctAnswer = document.getElementById("correctAnswer");
           correctAnswer.innerHTML = "You are right &#9989";
+          updateScores(true);
         }
         else {
           correctAnswer = document.getElementById("correctAnswer");
           correctAnswer.innerHTML = "You are wrong &#10060;";
+          updateScores(false);
         }
     }
     
@@ -173,3 +195,5 @@ function revealAnswer () {
     document.getElementById("option2-color").style.setProperty('--bs-btn-active-bg', '#a1101f');
   }
 }
+
+
