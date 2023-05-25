@@ -52,7 +52,7 @@ function saveScore(score) {
         found = true;
         break;
       }
-      scores.splice(i, 1);
+      
 
       for (const [i, prevScore] of scores.entries()) {
         if (score > prevScore.score) {
@@ -62,6 +62,8 @@ function saveScore(score) {
           break;
         }
       }
+
+      scores.splice(i + 1, 1);
 
       localStorage.setItem('scores', JSON.stringify(scores));
       found = true;
