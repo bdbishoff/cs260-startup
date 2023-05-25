@@ -61,3 +61,12 @@ For this deliverable I properly styled the application into its final appearance
 - **Application text content** - Consistent fonts and colors.
 - **Application images** - placed logo on homepage and put emoji's on competitive page.
 
+## JavaScript deliverable
+
+For this deliverable I made application generate 2 truths and a lie based off an array in the background. The user can select which one is the lie and earn points if they are correct. The points they earn are kept track of in local storage and displayed on the page and on the leaderboard.
+
+- **login** - When you press enter or the login button it takes you to the page that asks you choose a gamemode. Your username stays across all the pages.
+- **database** - Keeps track of players score and updates leaderboard accordingly. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
+- **WebSocket** - i used my generateLies function to act as the chatgpt api and generate truths and lies about random or specified topics. This will be replaced with WebSocket in the future.
+- **application logic** - Leaderboard changes based on who has the highest score. You get points by answer multiple questions correctly in a row. The highest score is kept track of and displayed on the leaderboard. 
+
