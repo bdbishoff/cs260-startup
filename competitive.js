@@ -19,6 +19,7 @@ function updateScores (correct) {
     if (highStreak < currStreak) {
       highStreak = currStreak;
       localStorage.setItem("highStreak", highStreak);
+      saveScore(highStreak);
     }
 
     document.getElementById("btn-highStreak").innerHTML = localStorage.getItem("highStreak");
@@ -29,6 +30,72 @@ function updateScores (correct) {
     localStorage.setItem("currStreak", currStreak);
     document.getElementById("btn-currStreak").innerHTML = localStorage.getItem("currStreak");
   }
+}
+
+function getPlayerName() {
+  return localStorage.getItem('userName') ?? 'Mystery player';
+}
+
+function saveScore(score) {
+  const userName = this.getPlayerName();
+  let scores = [];
+  const scoresText = localStorage.getItem('scores');
+  if (scoresText) {
+    scores = JSON.parse(scoresText);
+  }
+
+  let found = false;
+
+  for (const [i, prevPlayer] of scores.entries()) {
+    if (userName == prevPlayer.name) {
+      if (score == prevPlayer.score) {
+        found = true;
+        break;
+      }
+      scores.splice(i, 1);
+
+      for (const [i, prevScore] of scores.entries()) {
+        if (score > prevScore.score) {
+          const date = new Date().toLocaleDateString();
+          scores.splice(i, 0, {name: userName, score: score, date: date});
+          found = true;
+          break;
+        }
+      }
+
+      localStorage.setItem('scores', JSON.stringify(scores));
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    scores = this.updateLeaderboard(userName, score, scores);
+    localStorage.setItem('scores', JSON.stringify(scores));
+  }
+}
+
+function updateLeaderboard (userName, score, scores) {
+    const date = new Date().toLocaleDateString();
+    const newScore = { name: userName, score: score, date: date};
+
+    let found = false;
+    for (const [i, prevScore] of scores.entries()) {
+      if (score > prevScore.score) {
+        scores.splice(i, 0, newScore);
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      scores.push(newScore);
+    }
+
+    if (scores.length > 10) {
+      scores.length = 10;
+    }
+    return scores;
 }
 
 function getLies() {

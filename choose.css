@@ -19,6 +19,7 @@ ul {
 
 .nav-link {
     color: #dc3545;
+    --bs-nav-link-hover-color: #96000c;
 }
 
 #userID .nav-link {
@@ -47,6 +48,10 @@ main {
   footer a {
     float: right;
     color: #dc3545;
+  }
+
+  a:hover {
+    color: #96000c;
   }
 
 @media (max-height: 600px) {

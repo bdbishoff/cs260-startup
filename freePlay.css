@@ -19,6 +19,7 @@ ul {
 
 .nav-link {
     color: #dc3545;
+    --bs-nav-link-hover-color: #96000c;
 }
 
 #userID .nav-link {
@@ -70,6 +71,8 @@ h1 {
     --bs-btn-border-color: #a1101f;
     --bs-btn-hover-bg: #ff5264;
     --bs-btn-hover-border-color: #e63042;
+    --bs-btn-active-bg: #f50000;
+    --bs-btn-active-border-color: #cd0000;
   }
 
   footer {
@@ -80,6 +83,10 @@ h1 {
   footer a {
     float: right;
     color: #dc3545;
+  }
+
+  a:hover {
+    color: #96000c;
   }
 
   .wrong {

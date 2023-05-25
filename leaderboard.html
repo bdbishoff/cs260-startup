@@ -5,7 +5,7 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liar-GPT</title>
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="logo.png" />
 
     <!-- Include bootstrap CSS framework -->
     <link
@@ -51,31 +51,12 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">Name</th>
+          <th scope="col">Highest Streak</th>
+          <th scope="col">Date</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Okay</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Yo</td>
-          <td>Thornton</td>
-          <td>@yuh</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>Bird</td>
-          <td>@yesSirSki</td>
-        </tr>
-      </tbody>
+      <tbody id="scores"></tbody>
     </table>
 
     <footer>
@@ -84,5 +65,6 @@
       <a href="https://github.com/bdbishoff/cs260-startup">GitHub</a>
       <br />
     </footer>
+    <script src="leaderboard.js"></script>
   </body>
 </html>

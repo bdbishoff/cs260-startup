@@ -1,5 +1,4 @@
 function login() {
-    console.log("SDfsadfa");
     const nameEl = document.getElementsByClassName("form-control");
     console.log(nameEl[0].value);
     localStorage.setItem("userName", nameEl[0].value);
