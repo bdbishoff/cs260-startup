@@ -102,10 +102,10 @@ async function freePlayGenerate(userInput) {
     {role: "user", content: generatePrompt(userInput)},
   ]
   });
-
+  console.log(JSON.parse(completion.data.choices[0].message.content));
   return JSON.parse(completion.data.choices[0].message.content);
 }
 
-competitiveGenerate();
+freePlayGenerate("Highschool Math");
 
 module.exports = { competitiveGenerate, freePlayGenerate };

@@ -153,7 +153,6 @@ async function getLies() {
 
     document.getElementById("topicText").innerHTML = topic;
     document.getElementById("ExpText").innerHTML = explanation;
-
   
     correctAnswer = document.getElementById("correctAnswer");
     correctAnswer.innerHTML = "Guess the Lie";

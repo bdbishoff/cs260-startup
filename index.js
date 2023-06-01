@@ -37,16 +37,14 @@ apiRouter.get('/Comptopic', async (req, res) => {
     // get prompt response from generate js
     // change html to reponse options
     let compOptions =  await GEN.competitiveGenerate();
-    console.log("COMP OPTIONS:");
-    console.log(compOptions);
     res.send(compOptions);
 });
 
-apiRouter.get('/Freetopic', async (req, res) => {
+apiRouter.post('/Freetopic', async (req, res) => {
   // get prompt response from generate js
   // change html to reponse options
-  let compOptions =  await GEN.freePlayGenerateGenerate();
-  console.log("COMP OPTIONS:");
+  let compOptions =  await GEN.freePlayGenerate(req.body.userPrompt);
+  console.log("FREE OPTIONS:");
   console.log(compOptions);
   res.send(compOptions);
 });
