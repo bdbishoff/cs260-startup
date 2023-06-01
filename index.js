@@ -42,6 +42,15 @@ apiRouter.get('/Comptopic', async (req, res) => {
     res.send(compOptions);
 });
 
+apiRouter.get('/Freetopic', async (req, res) => {
+  // get prompt response from generate js
+  // change html to reponse options
+  let compOptions =  await GEN.freePlayGenerateGenerate();
+  console.log("COMP OPTIONS:");
+  console.log(compOptions);
+  res.send(compOptions);
+});
+
 
 // updateScores considers a new score for inclusion in the high scores.
 // The high scores are saved in memory and disappear whenever the service is restarted.

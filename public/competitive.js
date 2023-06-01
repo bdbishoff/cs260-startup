@@ -109,8 +109,19 @@ async function getLies() {
     const option2 = document.getElementsByClassName("option2")[0];
     const option3 = document.getElementsByClassName("option3")[0];
 
+    document.getElementById("before-gen-options").style.visibility="hidden";
+    document.getElementById("before-gen-submit").style.visibility="hidden";
+    document.getElementById("spin-wait").style.visibility="visible";
+    document.getElementById("topicText").innerHTML = "";
+    document.getElementById("ExpHold").style.visibility="hidden";
+
+
     let answerRes = await fetch('/api/Comptopic');
     response = await answerRes.json();
+
+    document.getElementById("spin-wait").style.visibility="hidden";
+
+
 
     // use chat gpt api to generate 2 truths and a lie about the topic randomly selected
     // from backend
@@ -120,13 +131,6 @@ async function getLies() {
     let truth2 = response.truth2;
     window.lie = response.lie;
     let explanation = response.explanation;
-
-    console.log(topic);
-    console.log(truth1);
-    console.log(truth2);
-    console.log(window.lie);
-    console.log(explanation);
-
 
     const numbers = [truth1, truth2, lie];
     window.shuffled = shuffleArray(numbers);
@@ -147,6 +151,10 @@ async function getLies() {
     document.getElementById("option3-color").style.setProperty('--bs-btn-bg', '#575a5d');
     document.getElementById("option3-color").style.setProperty('--bs-btn-active-bg', '#262628');
 
+    document.getElementById("topicText").innerHTML = topic;
+    document.getElementById("ExpText").innerHTML = explanation;
+
+  
     correctAnswer = document.getElementById("correctAnswer");
     correctAnswer.innerHTML = "Guess the Lie";
 }
@@ -231,6 +239,8 @@ function revealAnswer () {
     document.getElementById("option2-color").style.setProperty('--bs-btn-bg', '#a1101f');
     document.getElementById("option2-color").style.setProperty('--bs-btn-active-bg', '#a1101f');
   }
+
+  document.getElementById("ExpHold").style.visibility="visible";
 }
 
 

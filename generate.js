@@ -92,7 +92,6 @@ async function competitiveGenerate() {
     {role: "user", content: generatePrompt()},
   ]
   });
-  console.log(JSON.parse(completion.data.choices[0].message.content));
   return JSON.parse(completion.data.choices[0].message.content);
 }
 
@@ -103,7 +102,6 @@ async function freePlayGenerate(userInput) {
     {role: "user", content: generatePrompt(userInput)},
   ]
   });
-  JSON.parse(completion.data.choices[0].message.content);
 
   return JSON.parse(completion.data.choices[0].message.content);
 }

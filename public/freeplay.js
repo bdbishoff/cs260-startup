@@ -10,7 +10,7 @@ function shuffleArray(array) {
 
 function getLies() {
   // Grab input prompt
-  // const prompt = document.getElementsByClassName("prompt-input")[0].value;
+  const prompt = document.getElementsByClassName("prompt-input")[0].value;
   
   // change options based off prompt
   const option1 = document.getElementsByClassName("option1")[0];

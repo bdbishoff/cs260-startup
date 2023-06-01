@@ -63,6 +63,12 @@
         document.getElementById("btn-highStreak").innerHTML = localStorage.getItem("highStreak");
         document.getElementById("btn-currStreak").innerHTML = localStorage.getItem("currStreak");
       </script>
+    
+    <div id="spin-wait"class="spinner-border text-danger" role="status" style="visibility: hidden;">
+      <span class="sr-only"></span>
+    </div>
+
+    <div><legend>Topic: <span id="topicText"></span></legend></div>
 
     <div id="before-gen-options" style="visibility: hidden;">
       <div class="options">
@@ -80,7 +86,13 @@
       <div class="answer-submit" id="before-gen-submit" style="visibility: hidden;">
         <button class="btn btn-primary" onclick="checkAnswer()">Submit</button>
       </div>
+
+      <div style="visibility: hidden;" id="ExpHold"><legend>Explanation: <span id="ExpText"></span></legend></div>
     </main>
+
+    
+
+    <!-- <div style="visibility: hidden;"><legend>Explanation: <span id="ExpText"></span></legend></div> -->
 
     <footer>
       <hr />
