@@ -7,10 +7,10 @@ Have you ever encountered misinformation while on the internet? Maybe you have s
 
 ## **Design**
 
-![](/260login.png)
-![](/260choose.png)
-![](/260prompt.png)
-![](/260competitive.png)
+![](/assets/260login.png)
+![](/assets/260choose.png)
+![](/assets/260prompt.png)
+![](/assets/260competitive.png)
 
 Here is a sequence diagram that shows how people would interact with the backend and chatgpt.
 ![](/260server.png)
