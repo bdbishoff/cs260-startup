@@ -13,7 +13,7 @@ Have you ever encountered misinformation while on the internet? Maybe you have s
 ![](/assets/260competitive.png)
 
 Here is a sequence diagram that shows how people would interact with the backend and chatgpt.
-![](/260server.png)
+![](/assets//260server.png)
 
 ## **Key Features**
 - Secure login over HTTPS
