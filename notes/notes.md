@@ -46,6 +46,8 @@ ssh -i [key pair file] ubuntu@[yourdomainnamehere]
 Command to deploy contents to webserver
 
 ./deployFiles.sh -k ~/Desktop/cs260/awsWebserver/production.pem -h bishoff.click -s simon
+
+scp -i ~/Desktop/cs260/awsWebserver/production.pem ~/Desktop/cs260/cs260-startup/public/freePlay.js ubuntu@bishoff.click:~/services/startup/public/freePlay.js
 ```
 ### Here is the html from my project as a example of using a lot of different elements, scripts and bootstrap.
 

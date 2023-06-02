@@ -76,10 +76,11 @@ function generatePrompt(userInput=false) {
     }`;
   }
 
-require("dotenv").config();
+
+const config = require('./dbConfig.json');
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: config.OPENAI_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);

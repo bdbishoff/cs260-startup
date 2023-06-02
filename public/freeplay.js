@@ -63,7 +63,6 @@ async function getLies() {
   document.getElementById("option3-color").style.setProperty('--bs-btn-bg', '#575a5d');
   document.getElementById("option3-color").style.setProperty('--bs-btn-active-bg', '#262628');
 
-  document.getElementById("topicText").innerHTML = topic;
   document.getElementById("ExpText").innerHTML = explanation;
 
   correctAnswer = document.getElementById("correctAnswer");
@@ -144,4 +143,5 @@ else {
   document.getElementById("option2-color").style.setProperty('--bs-btn-bg', '#a1101f');
   document.getElementById("option2-color").style.setProperty('--bs-btn-active-bg', '#a1101f');
 }
+document.getElementById("ExpHold").style.visibility="visible";
 }

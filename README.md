@@ -70,3 +70,13 @@ For this deliverable I made application generate 2 truths and a lie based off an
 - **WebSocket** - i used my generateLies function to act as the chatgpt api and generate truths and lies about random or specified topics. This will be replaced with WebSocket in the future.
 - **application logic** - Leaderboard changes based on who has the highest score. You get points by answer multiple questions correctly in a row. The highest score is kept track of and displayed on the leaderboard. 
 
+## Service deliverable
+
+For this deliverable I created an HTTP service to host my frontend and provide backend endpoints.
+
+- **Node.js/Express HTTP service** - Implemented the service using Node.js and Express
+- **Static middleware for frontend** - Created a front end that statically displays my public folder.
+- **Calls to third party endpoints** - Uses chat-gpt api to get 2 truths and a lie. 
+- **Backend service endpoints** - Has backend endpoints that call different functions depending on if you're on competitive or free play.
+- **Frontend calls service endpoints** - Uses fetch calls to the functions to info from chatgpt.
+
