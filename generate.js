@@ -107,6 +107,4 @@ async function freePlayGenerate(userInput) {
   return JSON.parse(completion.data.choices[0].message.content);
 }
 
-freePlayGenerate("Highschool Math");
-
 module.exports = { competitiveGenerate, freePlayGenerate };
