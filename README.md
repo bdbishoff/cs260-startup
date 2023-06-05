@@ -80,3 +80,11 @@ For this deliverable I created an HTTP service to host my frontend and provide b
 - **Backend service endpoints** - Has backend endpoints that call different functions depending on if you're on competitive or free play.
 - **Frontend calls service endpoints** - Uses fetch calls to the functions to info from chatgpt.
 
+## DB deliverable
+
+For this deliverable I stored and retrieved data from MongoDB.
+
+- **MongoDB Atlas database created** - done!
+- **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
+- **Stores data in MongoDB** - done!
+
