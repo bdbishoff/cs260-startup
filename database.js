@@ -16,8 +16,8 @@ const scoreCollection = db.collection('score');
 });
 
 async function addScore(score) {
-  const result = await scoreCollection.insertOne(score);
-  return result;
+    const result = await scoreCollection.insertOne(score);
+    return result;
 }
 
 function getHighScores() {
@@ -30,4 +30,15 @@ function getHighScores() {
   return cursor.toArray();
 }
 
-module.exports = { addScore, getHighScores };
+async function updateScores(score) {
+    const query = {name: score.name};
+    const newValues = { $set: {score: score.score}};
+    const update = await scoreCollection.updateOne(query, newValues, function(err, res) {
+        console.log(`${score.name} score is updated to ${score.score}`);
+    });
+    if (update.matchedCount == 0) {
+        addScore(score);
+    }
+}
+
+module.exports = { addScore, getHighScores, updateScores };

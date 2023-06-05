@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const GEN = require('./generate.js');
+const DB = require('./database.js');
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -16,14 +17,21 @@ var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // GetScores
-apiRouter.get('/scores', (_req, res) => {
+apiRouter.get('/scores', async (_req, res) => {
+  const scores = await DB.getHighScores();
   res.send(scores);
 });
 
 // SubmitScore
-apiRouter.post('/score', (req, res) => {
-  scores = updateScores(req.body, scores);
+apiRouter.post('/score', async (req, res) => {
+  DB.addScore(req.body);
+  const scores = await DB.getHighScores();
   res.send(scores);
+});
+
+// updateScore
+apiRouter.post('/updateScore', async (req, res) => {
+  await DB.updateScores(req.body);
 });
 
 // Return the application's default page if the path is unknown
