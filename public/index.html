@@ -7,7 +7,7 @@
     <title>Liar-GPT</title>
     <link rel="icon" href="logo.png" />
 
-    <script src="login.js"></script>
+    
 
     <!-- Include bootstrap CSS framework -->
     <link
@@ -29,13 +29,13 @@
         <li class="nav-item">
           <a class="nav-link active" href="index.html">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="hidenav2" style="display: none;">
           <a class="nav-link" href="freePlay.html">Free Play</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="hidenav3" style="display: none;">
           <a class="nav-link" href="competitive.html">Competitive</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="hidenav4" style="display: none;">
           <a class="nav-link" href="leaderboard.html">Leaderboard</a>
         </li>
         <li class="nav-item" id="userID">
@@ -49,24 +49,46 @@
     <main>
       <img src="logo.png" width="50">
       <h1>Welcome</h1>
-      <p>Login to play</p>
-      <div>
+      
+      <div id="loginControls" style="display: none">
+        <p>Login to play</p>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text"  id="inputGroup-sizing-default">Name</span>
           </div>
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input id="userName" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
           </div>
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input id="userPassword" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
         <div class="btn-space">
-          <button class="btn btn-primary" onclick="login()">Submit</button>
+          <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+          <button type="button" class="btn btn-primary" onclick="createUser()">Create</button>
         </div>
       </div>
+
+      <!-- Displayed when ready to play -->
+      <div id="playControls" style="display: none">
+        <div id="playerName"></div>
+        <button type="button" class="btn btn-primary" onclick="play()">Play</button>
+        <button type="button" class="btn btn-secondary" onclick="logout()">Logout</button>
+      </div>
+
+      <!-- Error dialog -->
+      <div class="modal fade" id="msgModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-dark">
+            <div class="modal-body">error message here</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main>
 
     <footer>
@@ -79,5 +101,6 @@
     <script>
       document.getElementById("changeUser").innerHTML = localStorage.getItem("userName");
     </script>
+    <script src="login.js"></script>
   </body>
 </html>
