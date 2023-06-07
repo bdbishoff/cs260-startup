@@ -8,12 +8,16 @@
     setDisplay('hidenav2', 'block');
     setDisplay('hidenav3', 'block');
     setDisplay('hidenav4', 'block');
+    localStorage.setItem("highStreak", await streak(userName));
+    
   } else {
     setDisplay('loginControls', 'block');
     setDisplay('playControls', 'none');
     
   }
 })();
+
+
 
 async function loginUser() {
   loginOrCreate(`/api/auth/login`);
@@ -36,6 +40,7 @@ async function loginOrCreate(endpoint) {
 
   if (response.ok) {
     localStorage.setItem('userName', userName);
+    localStorage.setItem("highStreak", await streak(localStorage.getItem('userName')));
     window.location.href = 'choose.html';
   } else {
     const body = await response.json();
@@ -46,8 +51,21 @@ async function loginOrCreate(endpoint) {
   }
 }
 
-function play() {
+async function play() {
   window.location.href = 'choose.html';
+}
+
+async function streak (userName) {
+  const response = await fetch('/api/highStreak', {
+  method: 'post',
+  body: JSON.stringify({user: userName}),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+});
+let rep = await response.json();
+console.log(rep);
+return rep.score;
 }
 
 function logout() {

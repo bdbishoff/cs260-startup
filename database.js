@@ -67,6 +67,21 @@ async function updateScores(score) {
     }
 }
 
+async function getHighStreak(user) {
+  const query = {name: user};
+  let cursor = await scoreCollection.findOne(query);
+  if (cursor) {
+    console.log(cursor);
+    return cursor;
+  }
+  else {
+    cursor = {score: 0};
+    console.log(cursor);
+    return cursor;
+  }
+  
+}
+
 module.exports = {
   getUser,
   getUserByToken,
@@ -74,5 +89,6 @@ module.exports = {
   addScore,
   getHighScores,
   updateScores,
+  getHighStreak,
 };
 

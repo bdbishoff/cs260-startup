@@ -112,6 +112,12 @@ apiRouter.post('/updateScore', async (req, res) => {
   await DB.updateScores(req.body);
 });
 
+apiRouter.post('/highStreak', async (req, res) => {
+  highStreak = await DB.getHighStreak(req.body.user);
+  console.log(highStreak);
+  res.send(highStreak);
+})
+
 // Default error handler
 app.use(function (err, req, res, next) {
   res.status(500).send({ type: err.name, message: err.message });
