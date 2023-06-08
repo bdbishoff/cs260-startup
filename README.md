@@ -97,3 +97,12 @@ For this deliverable I added user registration and authentication.
 - **Use MongoDB to store credentials** - done!
 - **Restricts functionality** - You cannot play until you have logged in.
 
+## WebSocket deliverable
+
+For this deliverable I enabled realtime reporting on other users highest streak.
+
+- **Backend listens for WebSocket connection** - done!
+- **Frontend makes WebSocket connection** - done!
+- **Data sent over WebSocket connection** - done!
+- **WebSocket data displayed** - All users highest streaks are dipslayed in realtime as they achieve them.
+
