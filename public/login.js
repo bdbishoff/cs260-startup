@@ -64,7 +64,6 @@ async function streak (userName) {
   },
 });
 let rep = await response.json();
-console.log(rep);
 return rep.score;
 }
 

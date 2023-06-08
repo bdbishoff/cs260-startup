@@ -9,6 +9,21 @@ padding: 1em;
 flex: 0 80px;
 }
 
+.players {
+  flex: 1;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.player-name {
+  color: rgb(118, 190, 210);
+}
+
+#player-messages {
+  padding-top: 0.25em;
+  opacity: 0.7;
+}
+
 ul {
     display: grid;
   }

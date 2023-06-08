@@ -4,6 +4,7 @@ const GEN = require('./generate.js');
 const DB = require('./database.js');
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
+const { peerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
@@ -114,7 +115,6 @@ apiRouter.post('/updateScore', async (req, res) => {
 
 apiRouter.post('/highStreak', async (req, res) => {
   highStreak = await DB.getHighStreak(req.body.user);
-  console.log(highStreak);
   res.send(highStreak);
 })
 
@@ -151,9 +151,11 @@ apiRouter.post('/Freetopic', async (req, res) => {
   res.send(compOptions);
 });
 
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-  });
+const httpService = app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
+
+peerProxy(httpService);
 
 // keep things that you don't want everyone to see on the backend
 // Aka topic prompts
