@@ -1,3 +1,5 @@
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+let socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 
 (async () => {
   
@@ -27,6 +29,9 @@ function updateScores (correct) {
       localStorage.setItem("highStreak", highStreak);
       saveScore(highStreak);
       saveScoreDataBase(highStreak);
+      let userName = localStorage.getItem('userName');
+      let strk = localStorage.getItem('highStreak');
+      broadcastEvent(userName, strk);
     }
 
     document.getElementById("btn-highStreak").innerHTML = localStorage.getItem("highStreak");
@@ -274,8 +279,7 @@ async function saveScoreDataBase(score) {
 
 
 function configureWebSocket() {
-  const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-  let socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+  
   
   socket.onopen = (event) => {
     displayMsg('system', 'game', 'connected');
@@ -285,7 +289,7 @@ function configureWebSocket() {
   };
   socket.onmessage = async (event) => {
     const msg = JSON.parse(await event.data.text());
-    displayMsg(msg.from, `scored ${msg.value.score}`);
+    displayMsg('player', msg.from, `highest streak is now ${msg.value}`);
   };
 }
 
@@ -295,10 +299,9 @@ function displayMsg(cls, from, msg) {
     `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
 }
 
-function broadcastEvent(from, type, value) {
+function broadcastEvent(from, value) {
   const event = {
     from: from,
-    type: type,
     value: value,
   };
   socket.send(JSON.stringify(event));
