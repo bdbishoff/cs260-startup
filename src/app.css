@@ -10,7 +10,7 @@ li {
 
 .navbar-brand {
   font-size: 30px;
-  font-weight: 400;
+  font-weight: 500;
   margin-left: .5em;
   margin-right: 1em;
 }
@@ -21,17 +21,19 @@ header {
 }
 
 #userID {
-  margin-block-end: auto;
+  margin-left: auto;
 }
 
 .navbar-nav {
   --bs-nav-link-disabled-color: rgb(0 0 0);
+  width: 100%;
 }
 
 
 .nav-link {
   color: #dc3545;
   --bs-nav-link-hover-color: #96000c;
+  margin-left: 1em;
 }
 
 main {
