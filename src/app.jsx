@@ -7,6 +7,7 @@ import { Login } from "./login/login";
 import { Competitive } from "./competitive/competitive";
 import { FreePlay } from "./freePlay/freePlay";
 import { Leaderboard } from "./leaderboard/leaderboard";
+import { Choose } from "./choose/choose";
 
 function NotFound () {
     return <main>404: Return to sender. Address unknown</main>;
@@ -27,13 +28,13 @@ export default function App() {
                                 <li className="nav-item active">
                                     <NavLink className="nav-link" to=''>Home</NavLink> 
                                 </li>
-                                <li className="nav-item">
+                                <li className="nav-item" id="hidenav2">
                                     <NavLink className="nav-link" to='FreePlay'>Free Play</NavLink>
                                 </li>
-                                <li className="nav-item">
+                                <li className="nav-item" id="hidenav3">
                                     <NavLink className="nav-link" to='Competitive'>Competitive</NavLink>
                                 </li>
-                                <li className="nav-item">
+                                <li className="nav-item" id="hidenav4">
                                     <NavLink className="nav-link" to='Leaderboard'>Leaderboard</NavLink>
                                 </li>
                                 <li className="nav-item" id="userID">
@@ -49,6 +50,7 @@ export default function App() {
                     <Route path='/FreePlay' element={<FreePlay />} />
                     <Route path='/Competitive' element={<Competitive />} />
                     <Route path='/Leaderboard' element={<Leaderboard />} />
+                    <Route path='/Choose' element={<Choose />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
 

@@ -4,6 +4,14 @@ import './competitive.css';
 
 export function Competitive() {
 
+    useEffect(() => {
+
+        document.getElementById("changeUser").innerHTML = localStorage.getItem("userName");
+        document.getElementById("btn-highStreak").innerHTML = localStorage.getItem("highStreak");
+        document.getElementById("btn-currStreak").innerHTML = localStorage.getItem("currStreak");
+
+    }, []);
+
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     let socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 
@@ -328,13 +336,8 @@ export function Competitive() {
                 <button type="button" className="btn btn-light">Highest Streak&#128293;: <span id="btn-highStreak">0</span></button>
                 <button type="button" className="btn btn-light">Current Streak&#128200;: <span id="btn-currStreak">0</span></button>
             </div>
-            <script>
-                document.getElementById("changeUser").innerHTML = localStorage.getItem("userName");
-                document.getElementById("btn-highStreak").innerHTML = localStorage.getItem("highStreak");
-                document.getElementById("btn-currStreak").innerHTML = localStorage.getItem("currStreak");
-            </script>
 
-            <div id="spin-wait" className="spinner-border text-danger" role="status" style={{visibility: "hidden"}}>
+            <div id="spin-wait" className="spinner-border text-danger" role="status" style={{ visibility: "hidden" }}>
                 <span className="sr-only"></span>
             </div>
 
@@ -342,10 +345,10 @@ export function Competitive() {
                 <legend>Topic: <span id="topicText"></span></legend>
             </div>
 
-            <div id="before-gen-options" style={{visibility: "hidden"}}>
+            <div id="before-gen-options" style={{ visibility: "hidden" }}>
                 <div className="options">
                     <legend id="correctAnswer">Select the lie</legend>
-                    <input type="radio" className="btn-check" name="options" id="option1" autoComplete="off"/>
+                    <input type="radio" className="btn-check" name="options" id="option1" autoComplete="off" />
                     <label className="btn btn-secondary option1" id="option1-color" htmlFor="option1">The American Civil War was fought from
                         1861 to 1865.</label>
 
@@ -359,11 +362,11 @@ export function Competitive() {
 
                 </div>
             </div>
-            <div className="answer-submit" id="before-gen-submit" style={{visibility: "hidden"}}>
+            <div className="answer-submit" id="before-gen-submit" style={{ visibility: "hidden" }}>
                 <button className="btn btn-primary" onClick={checkAnswer}>Submit</button>
             </div>
 
-            <div style={{visibility: "hidden"}} id="ExpHold">
+            <div style={{ visibility: "hidden" }} id="ExpHold">
                 <legend>Explanation: <span id="ExpText"></span></legend>
             </div>
         </main>

@@ -1,7 +1,14 @@
 import React from 'react';
 import './freePlay.css';
+import { useEffect } from 'react';
 
 export function FreePlay() {
+
+    useEffect(() => {
+
+        document.getElementById("changeUser").innerHTML = localStorage.getItem("userName");
+
+    }, []);
 
     // document.getElementById("changeUser").innerHTML = localStorage.getItem("userName");
 
