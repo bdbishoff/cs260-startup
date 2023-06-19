@@ -100,13 +100,6 @@ apiRouter.post('/score', async (req, res) => {
   res.send(scores);
 });
 
-// // SubmitScore
-// secureApiRouter.post('/score', async (req, res) => {
-//   const score = { ...req.body, ip: req.ip };
-//   await DB.addScore(score);
-//   const scores = await DB.getHighScores();
-//   res.send(scores);
-// });
 
 // updateScore
 apiRouter.post('/updateScore', async (req, res) => {

@@ -2,13 +2,14 @@ import React from 'react';
 import { useEffect } from 'react';
 import { Choose } from '../choose/choose';
 import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './login.css';
-
-
+import {MessageDialog} from './messageDialog';
 
 
 export function Login() {
 
+    const [displayError, setDisplayError] = React.useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -58,11 +59,13 @@ export function Login() {
             localStorage.setItem("highStreak", await streak(localStorage.getItem('userName')));
             navigate('/Choose');
         } else {
+            
             const body = await response.json();
-            const modalEl = document.querySelector('#msgModal');
-            modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
-            const msgModal = new bootstrap.Modal(modalEl, {});
-            msgModal.show();
+            setDisplayError(`⚠ Error: ${body.msg}`);
+            // const modalEl = document.querySelector('#msgModal');
+            // modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
+            // const msgModal = new bootstrap.Modal(modalEl, {});
+            // msgModal.show();
         }
     }
 
@@ -134,21 +137,13 @@ export function Login() {
 
 
             <div id="playControls" style={{ visibility: "none" }}>
+                <div id="playerName"></div>
                 <button type="button" className="btn btn-primary" onClick={play}>Play</button>
                 <button type="button" className="btn btn-secondary" onClick={logout}>Logout</button>
             </div>
 
 
-            <div className="modal fade" id="msgModal" tabIndex="-1">
-                <div className="modal-dialog modal-dialog-centered">
-                    <div className="modal-content text-dark">
-                        <div className="modal-body">error message here</div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <MessageDialog message={displayError} onHide={() => setDisplayError(null)} />
 
         </main>
     );

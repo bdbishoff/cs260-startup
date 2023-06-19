@@ -106,3 +106,12 @@ For this deliverable I enabled realtime reporting on other users highest streak.
 - **Data sent over WebSocket connection** - done!
 - **WebSocket data displayed** - All users highest streaks are dipslayed in realtime as they achieve them.
 
+## React deliverable
+
+For this deliverable I converted the application over to use React.
+
+- **Bundled and transpiled** - done!
+- **Components** - Login, Competitive, freeplay, leaderboard, vote are all components.
+- **Router** - Routing between login and voting components.
+- **Hooks** - useEffect to change components based on user interaction.
+
